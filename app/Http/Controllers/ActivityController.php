@@ -24,7 +24,7 @@ class ActivityController extends Controller
             \Log::error($exception->getMessage());
             return response()->json(['status' => false, 'mesage' => 'Error processing request - '.$exception->getMessage(), 'data' => $exception], 500);
         }
-        return response()->json(['status' => true, 'message' => 'New Activity File created', 'data' =>  $client_resource], 201);
+        return response()->json(['status' => true, 'message' => 'New Activity created', 'data' =>  $client_resource], 201);
 
     }
 

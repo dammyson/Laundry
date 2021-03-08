@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\ActivityDetailsController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -32,4 +33,11 @@ Route::prefix('services')->name('service.')->group(function () {
     Route::get('/{id}', [ServiceController::class,'show'])->name('show');
     Route::post('/', [ServiceController::class,'create'])->name('store');
     Route::post('/{id}', [ServiceController::class,'update'])->name('update');//
+});
+
+Route::prefix('activity_details')->name('details.')->group(function () {
+    Route::get('/', [ActivityDetailsController::class,'get'])->name('list');
+    Route::get('/{id}', [ActivityDetailsController::class,'show'])->name('show');
+    Route::post('/', [ActivityDetailsController::class,'create'])->name('store');
+    Route::post('/{id}', [ActivityDetailsController::class,'update'])->name('update');//
 });
